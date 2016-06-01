@@ -1,0 +1,1 @@
+/home/halrover/git/kyle/camera_view/build/CMakeFiles/camera_view.dir

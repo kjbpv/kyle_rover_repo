@@ -73,14 +73,15 @@ int main(int argc, char** argv)
 
 
     Mat frame;	
-    namedWindow("raw", CV_WINDOW_AUTOSIZE);
+    //namedWindow("raw", CV_WINDOW_AUTOSIZE);
     namedWindow("unwrapped", CV_WINDOW_AUTOSIZE);
     
 	while(1)
 	{
 		myCapture.read(frame);
         remap(frame, dst, mapX, mapY, 1);
-		imshow("raw",frame);
+		//imshow("raw",frame);
+        flip(dst,dst,0);
 		imshow("unwrapped",dst);
 		waitKey(60);
 	}

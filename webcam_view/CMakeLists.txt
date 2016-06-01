@@ -1,0 +1,8 @@
+PROJECT(webcam_view)
+
+find_package(OpenCV REQUIRED core features2d imgproc flann highgui video ml)
+
+include_directories($OpenCV_INCLUDE_DIRECTORIES)
+
+ADD_EXECUTABLE(webcam_view webcam_view.cpp)
+TARGET_LINK_LIBRARIES(webcam_view ${OpenCV_LIBS})

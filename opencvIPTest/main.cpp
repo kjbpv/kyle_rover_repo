@@ -42,7 +42,7 @@ int main(int argc, char** argv)
         diameter = dWidth;
     }
     int dstWidth = 2.2 * diameter * 3.14159 / 2.0;
-    int dstHeight = diameter / 2.0;
+    int dstHeight = diameter / 1.5;
     
     Mat dst(dstHeight,dstWidth,CV_8UC3,Scalar(0,0,255));
     Mat mapX(dst.rows,dst.cols,CV_32F,Scalar(0,0,0));
@@ -81,6 +81,7 @@ int main(int argc, char** argv)
 		myCapture.read(frame);
         remap(frame, dst, mapX, mapY, 1);
 		//imshow("raw",frame);
+        flip(dst,dst,0);
 		imshow("unwrapped",dst);
 		waitKey(60);
 	}
